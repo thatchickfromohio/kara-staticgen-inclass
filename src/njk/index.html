@@ -6,30 +6,34 @@
 
 <div class="container">
   <div class="row">
-    <div class="col">
-    <h1>Main headline</h1>
-    <p class="author">By {% for author in authors %}
-      <a href="{{ author.link }}" target="_blank">{{ author.name }}</a>{% if not loop.last %}{% if loop.revindex0 == 1 %} and {% else %}, {% endif %}{% endif %} {% endfor %}
-      <br> Published {{ publish_date }}
-    </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
+    <div class="col-xs-0 col-sm-0 col-md-2 col-lg-2"></div>
+
+    <div class="col-xs-0 col-sm-12 col-md-8 col-lg-8">
+
     <p>
-      Lucas ipsum dolor <a href="detail-page.html">link to detail-page.html</a> amidala sith dooku solo moff organa obi-wan windu. Gamorrean binks wedge darth. Mon darth mon kit ponda solo. Moff watto ackbar mothma moff anakin. Lando skywalker lars fett calrissian lars organa. Organa kenobi wedge darth jawa skywalker anakin. Twi'lek kit darth calamari lando kamino droid. Darth jawa fett grievous maul. Palpatine obi-wan leia tusken raider dagobah. Twi'lek qui-gon boba antilles yoda thrawn. Wampa luuke wampa skywalker. Moff ponda ackbar dagobah kit lobot jinn solo.
+      Pirate Cove
+      <a href="detail-page.html">Diary Entries</a> 
+      
+      Coco Chanel once said “a woman who cuts her hair is about to change her life.” Given her success as both a
+      designer and businesswoman, I don’t doubt she was onto something. However, I’d boldly venture to, instead,
+      say “a woman who embraces the sea is about to change her life”. 
+
+Like Captain Coco, Madam C.J. Walker, and countless other women who strived to redefine the male-dominated industry of piratism,
+I strive to change the narrative of femme pirates everywhere! By reading my pirate diaries, you can stay up-to-date and abreast of all of my treasure hunts, adventures, and voyages to distant lands. You'll get to learn more about my pals Jake and Peter Pan.
+
+So if it's a priate's life for you, yo ho ho and away we go!
+
+ARGHHH!
     </p>
       <ul> 
       {% for entry in entries %}
-        <li>{{ entry.title }}, {{ entry.date }}, {{ entry.url}}</li>
-      {% endfor %}
-        {% for book in books %}
-          <li>{{ book.title }}, {{ book.author }}</li>
-        {% else %}
-          <li>This would display if the 'books' collection were empty</li>
-        {% endfor %}
+  <h3 class="entry-headline"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+  <p class="entry-date">{{ entry.date }}</p>
+  <hr>
+{% endfor %}
      </ul>
     </div>
   </div>
+    <div class="col-xs-0 col-sm-0 col-md-2 col-lg-2"></div>
 </div>
 {% endblock %}
